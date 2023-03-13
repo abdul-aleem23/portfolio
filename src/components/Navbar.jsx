@@ -34,6 +34,7 @@ list-style: none;
 `
 
 const ListItem = styled.li`
+font-weight: bold;
 cursor: pointer;
 `
 const Icons = styled.div`
@@ -47,7 +48,7 @@ cursor: pointer;
 `
 const Button = styled.button`
 color: #FFFAE4;
-width: 200px;
+width: 150px;
 font-size: 16px;
 letter-spacing: 2px;
 text-decoration: none;

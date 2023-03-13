@@ -44,15 +44,14 @@ const Desc = styled.p`
 `
 const Button = styled.button`
 color: #FFFAE4;
-/* light #84319B dark #632673 */
+width: 200px;
 font-size: 16px;
 letter-spacing: 2px;
 text-decoration: none;
 text-transform: uppercase;
 color: #84319B;
 cursor: pointer;
-border: 3px solid;
-padding: 12px 16px;
+border: 1px solid;
 box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
 position: relative;
 user-select: none;
@@ -62,8 +61,8 @@ touch-action: manipulation;
 
 &:active {
   box-shadow: 0px 0px 0px 0px;
-  top: 5px;
-  left: 5px;
+  top: 3px;
+  left: 3px;
 }
 @media (min-width: 768px) {
   padding: 0.25em 0.75em;

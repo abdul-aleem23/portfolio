@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Map from './Map'
 
 const Section = styled.div`
   height: 100vh;
@@ -16,7 +17,7 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 `
 const Title = styled.h1`
   font-weight: 200;
@@ -79,11 +80,13 @@ const Contact = () => {
             <Title>Contact Me</Title>
             <Input placeholder='Name'/>
             <Input placeholder='Email'/>
-            <TextArea placeholder='Please write a message' />
+            <TextArea placeholder='Please write a message' rows={10} />
             <Button>Send</Button>
           </Form>
         </Left>
-        <Right></Right>
+        <Right>
+          <Map />
+        </Right>
       </Container>
     </Section>
   )
