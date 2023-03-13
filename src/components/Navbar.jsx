@@ -47,22 +47,29 @@ cursor: pointer;
 `
 const Button = styled.button`
 color: #FFFAE4;
-float: right;
-padding: 12px 16px;
-
-background-color: #84319B;
-border: 0;
-border-bottom: 5px solid #632673;
-border-left: 1px solid #632673;
-border-radius:2px;
-
+width: 200px;
+font-size: 16px;
+letter-spacing: 2px;
+text-decoration: none;
+text-transform: uppercase;
+color: #84319B;
 cursor: pointer;
+border: 1px solid;
+box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
 position: relative;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+
 
 &:active {
-  border-bottom-width: 2px;
+  box-shadow: 0px 0px 0px 0px;
   top: 3px;
+  left: 3px;
 }
+@media (min-width: 768px) {
+  padding: 0.25em 0.75em;
+  }
 `
 
 const Navbar = () => {

@@ -43,23 +43,30 @@ const Desc = styled.p`
   font-size: 24px;
 `
 const Button = styled.button`
-  color: #FFFAE4;
-  width: 200px;
-  float: right;
-  padding: 12px 16px;
+color: #FFFAE4;
+/* light #84319B dark #632673 */
+font-size: 16px;
+letter-spacing: 2px;
+text-decoration: none;
+text-transform: uppercase;
+color: #84319B;
+cursor: pointer;
+border: 3px solid;
+padding: 12px 16px;
+box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+position: relative;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
 
-  background-color: #84319B;
-  border: 0;
-  border-bottom: 5px solid #632673;
-  border-left: 1px solid #632673;
-  border-radius:2px;
 
-  cursor: pointer;
-  position: relative;
-
-  &:active {
-    border-bottom-width: 2px;
-    top: 2px;
+&:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+@media (min-width: 768px) {
+  padding: 0.25em 0.75em;
   }
 `
 
