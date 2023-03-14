@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import styled from 'styled-components'
 import Map from './Map'
@@ -19,6 +19,7 @@ const Left = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  background-color: lightblue;
 `
 const Title = styled.h1`
   font-weight: 200;
@@ -74,32 +75,41 @@ const Right = styled.div`
 
 const Contact = () => {
   const ref = useRef()
-  const [success,setSuccess] = useState(null)
+  const [success, setSuccess] = useState(null)
 
-  const handleSubmit = e => {
-    e.preventDeafult() //Stops the page from refreshing.
+  const handleSubmit = (e) => {
+    e.preventDefault(); //Stops the page from refreshing.
 
     // from the EmailJS doc
-    emailjs.sendForm('service_a8dr9xp', 'template_uob0i6e', ref.current, 'UqPMbjaM-DYXNL9Yx')
-    .then((result) => {
-    console.log(result.text);
-    setSuccess(true)
-  }, (error) => {
-    console.log(error.text);
-    setSuccess(false)
-  });
-}
+    emailjs
+      .sendForm(
+        'service_ituqu3i',
+        'template_uob0i6e',
+        ref.current,
+        'UqPMbjaM-DYXNL9Yx'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSuccess(true)
+        },
+        (error) => {
+          console.log(error.text);
+          setSuccess(false)
+        }
+      );
+  };
   return (
     <Section>
       <Container>
         <Left>
           <Form ref={ref} onSubmit={handleSubmit}>
             <Title>Contact Me</Title>
-            <Input placeholder='Name' name='name'/>
-            <Input placeholder='Email' name='email'/>
-            <TextArea name='message' placeholder='Please write a message' rows={10} />
-            <Button type='submit'>Send</Button>
-            {success &&
+            <Input placeholder="Name" name="name"/>
+            <Input placeholder="Email" name="email"/>
+            <TextArea placeholder="Please write a message" name="message" rows={10} />
+            <Button type="submit">Send</Button>
+            {success && 
               "Your message has been received. I will get back to you soon!"}
           </Form>
         </Left>
@@ -108,7 +118,7 @@ const Contact = () => {
         </Right>
       </Container>
     </Section>
-  )
-}
+  );
+};
 
 export default Contact
