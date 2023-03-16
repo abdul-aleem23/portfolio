@@ -43,32 +43,6 @@ const SubTitle = styled.h2`
 const Desc = styled.p`
   font-size: 24px;
 `
-const Button = styled.button`
-color: #FFFAE4;
-width: 200px;
-font-size: 16px;
-letter-spacing: 2px;
-text-decoration: none;
-text-transform: uppercase;
-color: #84319B;
-cursor: pointer;
-border: 1px solid;
-box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
-position: relative;
-user-select: none;
--webkit-user-select: none;
-touch-action: manipulation;
-
-
-&:active {
-  box-shadow: 0px 0px 0px 0px;
-  top: 3px;
-  left: 3px;
-}
-@media (min-width: 768px) {
-  padding: 0.25em 0.75em;
-  }
-`
 
 const Right = styled.div`
   flex: 3;
@@ -107,19 +81,20 @@ const Hero = () => {
             <SubTitle>What I Do</SubTitle>
           </WhatIDo>
           <Desc>a student pursuing full stack development with a passion for crafting engaging digital experiences.</Desc>
-          <Button>Learn more</Button>
         </Left>
 
         <Right>
-          <Canvas camera= {{fov:25, position:[5, 5, 5]}}>
+          <Canvas>
+            <OrbitControls enableZoom={false}  />
             <ambientLight intensity={0.5} />
             <directionalLight position={[3, 2, 1]} />
-            <Cube />
-            <OrbitControls enableZoom={false}  />
-            <Sphere args={[1, 100, 200]} scale={1} />
-            <MeshDistortMaterial />
+            <Sphere args={[1, 100, 200]} scale={2.5}>
+              <MeshDistortMaterial 
+              color="#f7cce8" attach="material" distort={0.5} speed={3}
+              />
+            </Sphere>
         </Canvas>
-          <Img src="./img/hero-image - Copy.png" />
+          <Img src="./img/image-desktop-pc.png" />
         </Right>
       </Container>
     </Section>

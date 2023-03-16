@@ -43,7 +43,7 @@ align-items: center;
 gap: 20px;
 `
 const Icon = styled.img`
-width: 20;
+width: 25px;
 cursor: pointer;
 `
 const Button = styled.button`
