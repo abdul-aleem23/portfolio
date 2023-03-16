@@ -19,7 +19,6 @@ const Left = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background-color: lightblue;
 `
 const Title = styled.h1`
   font-weight: 200;
@@ -72,45 +71,48 @@ touch-action: manipulation;
 const Right = styled.div`
   flex: 1;
 `
-
 const Contact = () => {
-  const ref = useRef()
-  const [success, setSuccess] = useState(null)
+  const ref = useRef();
+  const [success, setSuccess] = useState(null);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); //Stops the page from refreshing.
+    e.preventDefault();
 
-    // from the EmailJS doc
     emailjs
       .sendForm(
-        'service_ituqu3i',
-        'template_uob0i6e',
+        "service_ituqu3i",
+        "template_uob0i6e",
         ref.current,
-        'UqPMbjaM-DYXNL9Yx'
+        "0TjmSgZ5nlRMmJfUP"
       )
       .then(
         (result) => {
           console.log(result.text);
-          setSuccess(true)
+          setSuccess(true);
         },
         (error) => {
           console.log(error.text);
-          setSuccess(false)
+          setSuccess(false);
         }
       );
   };
+
   return (
     <Section>
       <Container>
         <Left>
           <Form ref={ref} onSubmit={handleSubmit}>
             <Title>Contact Me</Title>
-            <Input placeholder="Name" name="name"/>
-            <Input placeholder="Email" name="email"/>
-            <TextArea placeholder="Please write a message" name="message" rows={10} />
+            <Input placeholder="Name" name="name" />
+            <Input placeholder="Email" name="email" />
+            <TextArea
+              placeholder="Write your message"
+              name="message"
+              rows={10}
+            />
             <Button type="submit">Send</Button>
-            {success && 
-              "Your message has been received. I will get back to you soon!"}
+            {success &&
+              "Your message has been sent. I will get back to you soon!"}
           </Form>
         </Left>
         <Right>
