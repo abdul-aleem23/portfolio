@@ -12,7 +12,7 @@ const Container = styled.div`
   overflow-y: auto;
   scrollbar-width: none;
   color: #FFFAE4;
-  background: url("/img/blackGradient.jpg");
+  background: url("/img/endless-constellation.svg");
   &::-webkit-scrollbar{
     display: none;
   }

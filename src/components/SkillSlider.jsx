@@ -18,6 +18,7 @@ margin-right: 55px;
 
 const StyledMarquee = styled(Marquee)`
   width: 1100px;
+  height: 80px;
 `;
 
 

@@ -26,6 +26,9 @@ const Top = styled.div`
 `
 const Bottom = styled.div`
   flex: 1;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 `
 
 const Works = () => {
